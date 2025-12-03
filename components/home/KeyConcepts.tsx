@@ -5,7 +5,7 @@ export default function KeyConcepts() {
   return (
     <div className="rounded-2xl bg-white p-8 shadow-lg dark:bg-slate-800">
       <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
-        Concepts Clés
+        Key Concepts
       </h2>
       <div className="grid gap-8 md:grid-cols-3">
         {conceptFlows.map((flow) => (

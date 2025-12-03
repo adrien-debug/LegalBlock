@@ -5,59 +5,59 @@ export default function LegalFlowSection() {
   const steps = [
     {
       name: "Intake",
-      description: "Réception de l'opportunité",
-      details: ["Formulaire", "Documents", "Validation"],
+      description: "Opportunity reception",
+      details: ["Form", "Documents", "Validation"],
     },
     {
-      name: "Analyse",
-      description: "Analyse par ADVISORBLOCK",
-      details: ["Moteur de règles", "LLM", "Scoring"],
+      name: "Analysis",
+      description: "Analysis by ADVISORBLOCK",
+      details: ["Rules engine", "LLM", "Scoring"],
     },
     {
-      name: "Stratégie",
-      description: "Définition de la stratégie",
-      details: ["Juridiction", "Structure", "Optimisation"],
+      name: "Strategy",
+      description: "Strategy definition",
+      details: ["Jurisdiction", "Structure", "Optimization"],
     },
     {
-      name: "Génération",
-      description: "Création des documents",
-      details: ["Templates", "Personnalisation", "Validation"],
+      name: "Generation",
+      description: "Document creation",
+      details: ["Templates", "Customization", "Validation"],
     },
     {
       name: "Validation",
-      description: "Approbation humaine",
-      details: ["Review", "Modifications", "Approbation"],
+      description: "Human approval",
+      details: ["Review", "Modifications", "Approval"],
     },
     {
       name: "Dispatch",
-      description: "Envoi aux autorités",
-      details: ["Filing", "Notifications", "Suivi"],
+      description: "Dispatch to authorities",
+      details: ["Filing", "Notifications", "Tracking"],
     },
     {
-      name: "Tokenisation",
-      description: "Création des smart contracts",
+      name: "Tokenization",
+      description: "Smart contract creation",
       details: ["NFT Master", "ERC-20", "Metadata"],
     },
   ];
 
   return (
-    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+    <section className="rounded-2xl bg-white p-8 shadow-lg dark:bg-slate-800">
       <div className="mb-8 flex items-center space-x-4">
         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
           <ArrowPathIcon className="h-7 w-7 text-white" />
         </div>
         <div>
           <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
-            Section 7 : Flux LEGAL FLOW
+            Section 7: LEGAL FLOW
           </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400">Pipeline complet de traitement</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Complete processing pipeline</p>
         </div>
       </div>
 
       <div className="space-y-8">
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Pipeline complet de traitement d'une opportunité
+            Complete opportunity processing pipeline
           </h3>
           <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
             {/* Flow Diagram */}
@@ -110,35 +110,35 @@ export default function LegalFlowSection() {
 
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Points de contrôle et approbations
+            Control points and approvals
           </h3>
           <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-4 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
               <div className="mb-2 flex items-center space-x-2">
                 <WarningIcon className="h-5 w-5 text-violet-600 dark:text-violet-400" />
                 <h4 className="font-semibold text-violet-600 dark:text-violet-400">
-                  Contrôle Automatique
+                  Automatic Control
                 </h4>
               </div>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Validation des données et conformité de base</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Data validation and basic compliance</p>
             </div>
             <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-4 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
               <div className="mb-2 flex items-center space-x-2">
                 <CheckIconGeneral className="h-5 w-5 text-violet-600 dark:text-violet-400" />
                 <h4 className="font-semibold text-violet-600 dark:text-violet-400">
-                  Review Humaine
+                  Human Review
                 </h4>
               </div>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Validation par expert juridique si nécessaire</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Validation by legal expert if necessary</p>
             </div>
             <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-4 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
               <div className="mb-2 flex items-center space-x-2">
                 <CheckIconGeneral className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
                 <h4 className="font-semibold text-emerald-600 dark:text-emerald-400">
-                  Approbation Finale
+                  Final Approval
                 </h4>
               </div>
-              <p className="text-sm text-slate-600 dark:text-slate-400">Signature et validation finale avant dispatch</p>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Signature and final validation before dispatch</p>
             </div>
           </div>
         </div>

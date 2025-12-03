@@ -4,117 +4,117 @@ export default function TechnicalModulesSection() {
   const modules = [
     {
       name: "Opportunity Intake",
-      description: "Réception et validation des opportunités",
+      description: "Opportunity reception and validation",
       details: [
-        "Formulaire interactif multi-étapes",
-        "Validation automatique des données",
-        "Upload et traitement de documents",
-        "Intégration avec systèmes externes",
+        "Multi-step interactive form",
+        "Automatic data validation",
+        "Document upload and processing",
+        "Integration with external systems",
       ],
     },
     {
       name: "Legal Strategy Engine",
-      description: "Moteur de stratégie juridique",
+      description: "Legal strategy engine",
       details: [
-        "Analyse multi-critères",
-        "Scoring des options",
-        "Recommandations justifiées",
-        "Optimisation automatique",
+        "Multi-criteria analysis",
+        "Option scoring",
+        "Justified recommendations",
+        "Automatic optimization",
       ],
     },
     {
       name: "SPV Builder",
-      description: "Construction automatique de structures SPV",
+      description: "Automatic SPV structure construction",
       details: [
-        "Génération de structures complètes",
-        "Configuration des statuts",
-        "Définition des rôles et responsabilités",
-        "Intégration des clauses spécifiques",
+        "Complete structure generation",
+        "Articles configuration",
+        "Roles and responsibilities definition",
+        "Specific clauses integration",
       ],
     },
     {
       name: "Contract Generator",
-      description: "Génération de contrats",
+      description: "Contract generation",
       details: [
-        "Templates modulaires",
-        "Remplissage automatique",
-        "Génération de clauses personnalisées",
-        "Export multi-formats",
+        "Modular templates",
+        "Automatic filling",
+        "Personalized clause generation",
+        "Multi-format export",
       ],
     },
     {
       name: "Risk & Compliance Engine",
-      description: "Analyse de risques et conformité",
+      description: "Risk analysis and compliance",
       details: [
-        "KYC/AML automatique",
-        "Vérification des sanctions",
-        "Scoring des risques",
-        "Rapports de conformité",
+        "Automatic KYC/AML",
+        "Sanctions verification",
+        "Risk scoring",
+        "Compliance reports",
       ],
     },
     {
       name: "Filing & Dispatch Engine",
-      description: "Envoi aux autorités et prestataires",
+      description: "Dispatch to authorities and service providers",
       details: [
-        "Détection automatique des destinataires",
-        "Préparation des filings",
-        "Envoi sécurisé",
-        "Suivi et notifications",
+        "Automatic recipient detection",
+        "Filing preparation",
+        "Secure dispatch",
+        "Tracking and notifications",
       ],
     },
     {
       name: "Tokenization Engine",
-      description: "Génération des smart contracts",
+      description: "Smart contract generation",
       details: [
         "NFT Master ERC-721",
         "Vault Contract",
         "ERC-20 Shares",
-        "Metadata juridique embarquée",
+        "Embedded legal metadata",
       ],
     },
     {
       name: "Document Vault",
-      description: "Stockage et versioning",
+      description: "Storage and versioning",
       details: [
-        "Stockage sécurisé",
-        "Versioning automatique",
-        "Historique des modifications",
-        "Accès contrôlé",
+        "Secure storage",
+        "Automatic versioning",
+        "Modification history",
+        "Controlled access",
       ],
     },
     {
       name: "AdvisorBlock AI Interface",
-      description: "Interface avec l'IA",
+      description: "AI interface",
       details: [
-        "API pour moteur de règles",
-        "Intégration LLM",
-        "Gestion du contexte",
-        "Optimisation des prompts",
+        "API for rules engine",
+        "LLM integration",
+        "Context management",
+        "Prompt optimization",
       ],
     },
     {
       name: "Audit & Versioning",
-      description: "Traçabilité et historique",
+      description: "Traceability and history",
       details: [
-        "Log de toutes les actions",
-        "Historique des décisions",
-        "Traçabilité complète",
-        "Rapports d'audit",
+        "Log of all actions",
+        "Decision history",
+        "Complete traceability",
+        "Audit reports",
       ],
     },
   ];
 
   return (
-    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+    <section className="rounded-2xl bg-white p-8 shadow-lg dark:bg-slate-800">
       <div className="mb-8 flex items-center space-x-4">
         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
           <CogIcon className="h-7 w-7 text-white" />
         </div>
         <div>
           <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
-            Section 6 : Modules techniques
+            Section 6: Technical Modules
           </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400">Architecture technique complète</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Complete technical architecture</p>
         </div>
       </div>
 

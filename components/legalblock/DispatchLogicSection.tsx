@@ -2,39 +2,39 @@ import { PaperAirplaneIcon } from "@/components/icons/SectionIcons";
 
 export default function DispatchLogicSection() {
   const recipients = [
-    { name: "RAK ICC Registry", jurisdiction: "RAK ICC", type: "Autorité" },
-    { name: "Delaware Division of Corporations", jurisdiction: "Delaware", type: "Autorité" },
-    { name: "DLD (Dubai Land Department)", jurisdiction: "UAE", type: "Autorité" },
-    { name: "DIFC Courts", jurisdiction: "DIFC", type: "Autorité" },
-    { name: "Compliance internes BlockBank", jurisdiction: "Toutes", type: "Interne" },
-    { name: "Cabinets juridiques externes", jurisdiction: "Toutes", type: "Externe" },
+    { name: "RAK ICC Registry", jurisdiction: "RAK ICC", type: "Authority" },
+    { name: "Delaware Division of Corporations", jurisdiction: "Delaware", type: "Authority" },
+    { name: "DLD (Dubai Land Department)", jurisdiction: "UAE", type: "Authority" },
+    { name: "DIFC Courts", jurisdiction: "DIFC", type: "Authority" },
+    { name: "BlockBank Internal Compliance", jurisdiction: "All", type: "Internal" },
+    { name: "External Legal Firms", jurisdiction: "All", type: "External" },
   ];
 
   const decisionMatrix = [
-    { asset: "Immobilier UAE", jurisdiction: "RAK ICC", recipients: ["RAK ICC Registry", "DLD", "Compliance BlockBank"] },
-    { asset: "Immobilier USA", jurisdiction: "Delaware", recipients: ["Delaware Division", "Compliance BlockBank"] },
-    { asset: "Luxury Goods", jurisdiction: "DIFC", recipients: ["DIFC Courts", "Compliance BlockBank", "Cabinet juridique"] },
-    { asset: "Mining", jurisdiction: "RAK ICC", recipients: ["RAK ICC Registry", "Compliance BlockBank"] },
+    { asset: "UAE Real Estate", jurisdiction: "RAK ICC", recipients: ["RAK ICC Registry", "DLD", "BlockBank Compliance"] },
+    { asset: "USA Real Estate", jurisdiction: "Delaware", recipients: ["Delaware Division", "BlockBank Compliance"] },
+    { asset: "Luxury Goods", jurisdiction: "DIFC", recipients: ["DIFC Courts", "BlockBank Compliance", "Legal Firm"] },
+    { asset: "Mining", jurisdiction: "RAK ICC", recipients: ["RAK ICC Registry", "BlockBank Compliance"] },
   ];
 
   return (
-    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+    <section className="rounded-2xl bg-white p-8 shadow-lg dark:bg-slate-800">
       <div className="mb-8 flex items-center space-x-4">
         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
           <PaperAirplaneIcon className="h-7 w-7 text-white" />
         </div>
         <div>
           <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
-            Section 8 : Logique de dispatch
+            Section 8: Dispatch Logic
           </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400">Envoi automatique aux autorités</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Automatic dispatch to authorities</p>
         </div>
       </div>
 
       <div className="space-y-8">
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Décision automatique des destinataires
+            Automatic recipient decision
           </h3>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {recipients.map((recipient) => (
@@ -58,15 +58,15 @@ export default function DispatchLogicSection() {
 
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Matrice de décision par juridiction et type d'actif
+            Decision matrix by jurisdiction and asset type
           </h3>
           <div className="overflow-x-auto rounded-lg bg-white dark:bg-slate-800">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-slate-200 dark:border-slate-700">
-                  <th className="px-4 py-3 text-left text-sm font-semibold">Type d'Actif</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold">Juridiction</th>
-                  <th className="px-4 py-3 text-left text-sm font-semibold">Destinataires</th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold">Asset Type</th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold">Jurisdiction</th>
+                  <th className="px-4 py-3 text-left text-sm font-semibold">Recipients</th>
                 </tr>
               </thead>
               <tbody>
@@ -98,7 +98,7 @@ export default function DispatchLogicSection() {
 
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Workflow d'envoi et de suivi
+            Dispatch and tracking workflow
           </h3>
           <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
             <ol className="space-y-4">
@@ -107,9 +107,9 @@ export default function DispatchLogicSection() {
                   1
                 </span>
                 <div>
-                  <h4 className="font-semibold">Détection automatique</h4>
+                  <h4 className="font-semibold">Automatic detection</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Identification des destinataires selon la stratégie sélectionnée
+                    Identification of recipients according to selected strategy
                   </p>
                 </div>
               </li>
@@ -118,9 +118,9 @@ export default function DispatchLogicSection() {
                   2
                 </span>
                 <div>
-                  <h4 className="font-semibold">Préparation des documents</h4>
+                  <h4 className="font-semibold">Document preparation</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Formatage et adaptation selon les exigences de chaque destinataire
+                    Formatting and adaptation according to each recipient's requirements
                   </p>
                 </div>
               </li>
@@ -129,9 +129,9 @@ export default function DispatchLogicSection() {
                   3
                 </span>
                 <div>
-                  <h4 className="font-semibold">Envoi sécurisé</h4>
+                  <h4 className="font-semibold">Secure dispatch</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Transmission via canaux sécurisés (API, email crypté, portail)
+                    Transmission via secure channels (API, encrypted email, portal)
                   </p>
                 </div>
               </li>
@@ -140,9 +140,9 @@ export default function DispatchLogicSection() {
                   4
                 </span>
                 <div>
-                  <h4 className="font-semibold">Suivi et notifications</h4>
+                  <h4 className="font-semibold">Tracking and notifications</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Tracking du statut, notifications de réception et de traitement
+                    Status tracking, receipt and processing notifications
                   </p>
                 </div>
               </li>

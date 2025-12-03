@@ -301,6 +301,7 @@ function Step2Form({
             <FormField
               label="Financement Requis?"
               type="checkbox"
+              value={data.financingRequired || false}
               checked={data.financingRequired || false}
               onChange={(e) => updateData("financingRequired", e.target.checked)}
             />
@@ -330,6 +331,7 @@ function Step2Form({
         <FormField
           label="Assurance Requise?"
           type="checkbox"
+          value={data.insuranceRequired || false}
           checked={data.insuranceRequired || false}
           onChange={(e) => updateData("insuranceRequired", e.target.checked)}
         />
@@ -448,7 +450,7 @@ function FormField({
   label: string;
   required?: boolean;
   type?: "text" | "number" | "textarea" | "select" | "checkbox";
-  value: string | number | boolean;
+  value?: string | number | boolean;
   onChange: (e: any) => void;
   placeholder?: string;
   options?: { value: string; label: string }[];

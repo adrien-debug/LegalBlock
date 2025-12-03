@@ -2,55 +2,54 @@ import { ClipboardIcon } from "@/components/icons/SectionIcons";
 
 export default function OverviewSection() {
   return (
-    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+    <section className="rounded-2xl bg-white p-8 shadow-lg dark:bg-slate-800">
       <div className="mb-8 flex items-center space-x-4">
         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
           <ClipboardIcon className="h-7 w-7 text-white" />
         </div>
         <div>
           <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
-            Section 1 : Vue d'ensemble LEGALBLOCK
+            Section 1: LEGALBLOCK Overview
           </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400">Architecture et objectifs</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Architecture and objectives</p>
         </div>
       </div>
 
       <div className="space-y-6 text-slate-700 dark:text-slate-300">
         <div>
           <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">
-            Description de la plateforme d'automatisation juridique
+            Legal automation platform description
           </h3>
           <p className="leading-relaxed">
-            LEGALBLOCK est une plateforme complète d'automatisation juridique conçue pour
-            transformer le processus de tokenisation d'actifs réels (RWA). Elle combine
-            intelligence artificielle, moteurs de règles juridiques et génération automatique
-            de documents pour créer des structures légales optimisées en quelques minutes
-            au lieu de plusieurs semaines.
+            LEGALBLOCK is a complete legal automation platform designed to transform the
+            real-world asset (RWA) tokenization process. It combines artificial intelligence,
+            legal rule engines and automatic document generation to create optimized legal
+            structures in minutes instead of several weeks.
           </p>
         </div>
 
         <div>
           <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">
-            Objectifs et valeur ajoutée
+            Objectives and added value
           </h3>
           <ul className="ml-6 list-disc space-y-2">
             <li>
-              <strong>Rapidité :</strong> Réduction du temps de création de structures juridiques
-              de 3-6 semaines à quelques heures
+              <strong>Speed:</strong> Reduction of legal structure creation time from 3-6 weeks
+              to a few hours
             </li>
             <li>
-              <strong>Précision :</strong> Élimination des erreurs humaines grâce à l'automatisation
+              <strong>Accuracy:</strong> Elimination of human errors through automation
             </li>
             <li>
-              <strong>Conformité :</strong> Garantie de conformité avec les réglementations
-              internationales (KYC, AML, sanctions)
+              <strong>Compliance:</strong> Guarantee of compliance with international regulations
+              (KYC, AML, sanctions)
             </li>
             <li>
-              <strong>Optimisation :</strong> Sélection automatique de la juridiction et structure
-              optimales selon le type d'actif
+              <strong>Optimization:</strong> Automatic selection of optimal jurisdiction and structure
+              according to asset type
             </li>
             <li>
-              <strong>Traçabilité :</strong> Audit trail complet de toutes les décisions et
+              <strong>Traceability:</strong> Complete audit trail of all decisions and
               modifications
             </li>
           </ul>
@@ -58,26 +57,26 @@ export default function OverviewSection() {
 
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Architecture générale
+            General architecture
           </h3>
           <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
             <pre className="overflow-x-auto text-sm font-mono text-slate-700 dark:text-slate-300">
 {`LEGALBLOCK Architecture
 ├── Opportunity Intake
-│   └── Formulaire d'opportunité
-├── ADVISORBLOCK (IA Juridique)
-│   ├── Moteur de règles
-│   └── Moteur LLM
+│   └── Opportunity form
+├── ADVISORBLOCK (Legal AI)
+│   ├── Rules engine
+│   └── LLM engine
 ├── Legal Strategy Engine
-│   ├── Sélection juridiction
-│   └── Sélection structure
+│   ├── Jurisdiction selection
+│   └── Structure selection
 ├── Contract Generator
-│   └── Génération documents
+│   └── Document generation
 ├── Risk & Compliance Engine
 │   ├── KYC/AML
 │   └── Sanctions screening
 ├── Filing & Dispatch Engine
-│   └── Envoi automatique
+│   └── Automatic dispatch
 ├── Tokenization Engine
 │   ├── NFT Master
 │   └── ERC-20 Shares

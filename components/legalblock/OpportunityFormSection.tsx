@@ -9,37 +9,37 @@ export default function OpportunityFormSection() {
   const [activeTab, setActiveTab] = useState("fields");
 
   const assetTypes = [
-    { value: "real-estate", label: "Immobilier", description: "Propriétés résidentielles, commerciales, terrains", icon: RealEstateIcon },
-    { value: "mining", label: "Mining", description: "Concessions minières, droits d'extraction", icon: MiningIcon },
-    { value: "luxury", label: "Luxury Goods", description: "Bijoux, montres, art, voitures de collection", icon: LuxuryIcon },
-    { value: "business", label: "Business", description: "Entreprises, parts sociales, royalties", icon: BusinessIcon },
-    { value: "credit", label: "Crédit", description: "Prêts, créances, obligations", icon: CreditIcon },
-    { value: "rwa", label: "RWA", description: "Autres actifs réels tokenisables", icon: RwaIcon },
+    { value: "real-estate", label: "Real Estate", description: "Residential, commercial properties, land", icon: RealEstateIcon },
+    { value: "mining", label: "Mining", description: "Mining concessions, extraction rights", icon: MiningIcon },
+    { value: "luxury", label: "Luxury Goods", description: "Jewelry, watches, art, collector cars", icon: LuxuryIcon },
+    { value: "business", label: "Business", description: "Companies, shares, royalties", icon: BusinessIcon },
+    { value: "credit", label: "Credit", description: "Loans, receivables, bonds", icon: CreditIcon },
+    { value: "rwa", label: "RWA", description: "Other tokenizable real assets", icon: RwaIcon },
   ];
 
   const formFields = [
-    { name: "valeur", label: "Valeur de l'actif", type: "number", required: true, description: "Valeur estimée en USD" },
-    { name: "juridiction", label: "Juridiction préférée", type: "select", required: false, description: "RAK ICC, Delaware, DIFC, ADGM, France, EU" },
-    { name: "identite", label: "Identité du propriétaire", type: "text", required: true, description: "Nom, nationalité, KYC" },
-    { name: "finalite", label: "Finalité de la tokenisation", type: "textarea", required: true, description: "Raisons et objectifs" },
-    { name: "ltv", label: "Loan-to-Value (LTV)", type: "number", required: false, description: "Ratio prêt/valeur en %" },
-    { name: "duree", label: "Durée", type: "number", required: true, description: "Durée en années" },
-    { name: "garanties", label: "Garanties", type: "textarea", required: false, description: "Garanties additionnelles" },
-    { name: "flux_revenus", label: "Flux de revenus", type: "textarea", required: false, description: "Revenus attendus, périodicité" },
-    { name: "documents", label: "Documents", type: "file", required: true, description: "Titre de propriété, certificats, etc." },
+    { name: "valeur", label: "Asset Value", type: "number", required: true, description: "Estimated value in USD" },
+    { name: "juridiction", label: "Preferred Jurisdiction", type: "select", required: false, description: "RAK ICC, Delaware, DIFC, ADGM, France, EU" },
+    { name: "identite", label: "Owner Identity", type: "text", required: true, description: "Name, nationality, KYC" },
+    { name: "finalite", label: "Tokenization Purpose", type: "textarea", required: true, description: "Reasons and objectives" },
+    { name: "ltv", label: "Loan-to-Value (LTV)", type: "number", required: false, description: "Loan/value ratio in %" },
+    { name: "duree", label: "Duration", type: "number", required: true, description: "Duration in years" },
+    { name: "garanties", label: "Guarantees", type: "textarea", required: false, description: "Additional guarantees" },
+    { name: "flux_revenus", label: "Revenue Streams", type: "textarea", required: false, description: "Expected revenues, periodicity" },
+    { name: "documents", label: "Documents", type: "file", required: true, description: "Title deeds, certificates, etc." },
   ];
 
   return (
-    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+    <section className="rounded-2xl bg-white p-8 shadow-lg dark:bg-slate-800">
       <div className="mb-8 flex items-center space-x-4">
         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
           <DocumentTextIcon className="h-7 w-7 text-white" />
         </div>
         <div>
           <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
-            Section 3 : Formulaire "Nouvelle Opportunité"
+            Section 3: "New Opportunity" Form
           </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400">Saisie et validation des opportunités</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Opportunity entry and validation</p>
         </div>
       </div>
 
@@ -54,7 +54,7 @@ export default function OpportunityFormSection() {
                 : "text-slate-600 hover:text-violet-600 dark:text-slate-400 dark:hover:text-violet-400"
             }`}
           >
-            Champs du Formulaire
+            Form Fields
           </button>
           <button
             onClick={() => setActiveTab("types")}
@@ -64,7 +64,7 @@ export default function OpportunityFormSection() {
                 : "text-slate-600 hover:text-violet-600 dark:text-slate-400 dark:hover:text-violet-400"
             }`}
           >
-            Types d'Actifs
+            Asset Types
           </button>
           <button
             onClick={() => setActiveTab("process")}
@@ -74,7 +74,7 @@ export default function OpportunityFormSection() {
                 : "text-slate-600 hover:text-violet-600 dark:text-slate-400 dark:hover:text-violet-400"
             }`}
           >
-            Processus de Soumission
+            Submission Process
           </button>
         </div>
 
@@ -82,7 +82,7 @@ export default function OpportunityFormSection() {
         {activeTab === "fields" && (
           <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
             <h3 className="mb-6 text-xl font-semibold text-slate-900 dark:text-white">
-              Description détaillée des champs requis
+              Detailed description of required fields
             </h3>
             <div className="space-y-4">
               {formFields.map((field) => (
@@ -109,7 +109,7 @@ export default function OpportunityFormSection() {
         {activeTab === "types" && (
           <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
             <h3 className="mb-6 text-xl font-semibold text-slate-900 dark:text-white">
-              Exemples de types d'actifs
+              Asset type examples
             </h3>
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {assetTypes.map((type) => {
@@ -136,7 +136,7 @@ export default function OpportunityFormSection() {
         {activeTab === "process" && (
           <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
             <h3 className="mb-6 text-xl font-semibold text-slate-900 dark:text-white">
-              Processus de soumission
+              Submission process
             </h3>
             <ol className="space-y-6">
               <li className="flex items-start space-x-4">
@@ -146,10 +146,10 @@ export default function OpportunityFormSection() {
                 <div className="flex-1">
                   <div className="mb-2 flex items-center space-x-2">
                     <HomeIcon className="h-5 w-5 text-violet-600 dark:text-violet-400" />
-                    <h4 className="font-semibold text-slate-900 dark:text-white">Remplissage du formulaire</h4>
+                    <h4 className="font-semibold text-slate-900 dark:text-white">Form completion</h4>
                   </div>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    L'utilisateur complète tous les champs requis avec les informations de l'opportunité
+                    User completes all required fields with opportunity information
                   </p>
                 </div>
               </li>
@@ -160,10 +160,10 @@ export default function OpportunityFormSection() {
                 <div className="flex-1">
                   <div className="mb-2 flex items-center space-x-2">
                     <UploadIcon className="h-5 w-5 text-violet-600 dark:text-violet-400" />
-                    <h4 className="font-semibold text-slate-900 dark:text-white">Upload des documents</h4>
+                    <h4 className="font-semibold text-slate-900 dark:text-white">Document upload</h4>
                   </div>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Téléchargement des documents justificatifs (titres de propriété, certificats, etc.)
+                    Upload of supporting documents (title deeds, certificates, etc.)
                   </p>
                 </div>
               </li>
@@ -174,10 +174,10 @@ export default function OpportunityFormSection() {
                 <div className="flex-1">
                   <div className="mb-2 flex items-center space-x-2">
                     <CheckIconGeneral className="h-5 w-5 text-violet-600 dark:text-violet-400" />
-                    <h4 className="font-semibold text-slate-900 dark:text-white">Validation automatique</h4>
+                    <h4 className="font-semibold text-slate-900 dark:text-white">Automatic validation</h4>
                   </div>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Vérification de la complétude et cohérence des données
+                    Verification of data completeness and consistency
                   </p>
                 </div>
               </li>
@@ -188,10 +188,10 @@ export default function OpportunityFormSection() {
                 <div className="flex-1">
                   <div className="mb-2 flex items-center space-x-2">
                     <RobotIcon className="h-5 w-5 text-violet-600 dark:text-violet-400" />
-                    <h4 className="font-semibold text-slate-900 dark:text-white">Soumission à ADVISORBLOCK</h4>
+                    <h4 className="font-semibold text-slate-900 dark:text-white">Submission to ADVISORBLOCK</h4>
                   </div>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    L'opportunité est transmise au moteur d'analyse pour traitement
+                    Opportunity is transmitted to the analysis engine for processing
                   </p>
                 </div>
               </li>

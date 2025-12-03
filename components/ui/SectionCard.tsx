@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-type Category = "légal" | "mécanisme" | "code" | "analyse";
+type Category = "legal" | "mechanism" | "code" | "analysis";
 
 interface SectionCardProps {
   title: string;
@@ -11,10 +11,10 @@ interface SectionCardProps {
 }
 
 const categoryColors: Record<Category, string> = {
-  légal: "border-purple-200 hover:border-purple-400 dark:border-purple-800 dark:hover:border-purple-600",
-  mécanisme: "border-blue-200 hover:border-blue-400 dark:border-blue-800 dark:hover:border-blue-600",
+  legal: "border-purple-200 hover:border-purple-400 dark:border-purple-800 dark:hover:border-purple-600",
+  mechanism: "border-blue-200 hover:border-blue-400 dark:border-blue-800 dark:hover:border-blue-600",
   code: "border-green-200 hover:border-green-400 dark:border-green-800 dark:hover:border-green-600",
-  analyse: "border-orange-200 hover:border-orange-400 dark:border-orange-800 dark:hover:border-orange-600",
+  analysis: "border-orange-200 hover:border-orange-400 dark:border-orange-800 dark:hover:border-orange-600",
 };
 
 export default function SectionCard({

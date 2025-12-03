@@ -3,4 +3,5 @@ export { default as SectionsGrid } from "./SectionsGrid";
 export { default as DeploymentAssistant } from "./DeploymentAssistant";
 export { default as QuickNavigation } from "./QuickNavigation";
 export { default as KeyConcepts } from "./KeyConcepts";
+export { default as Notifications } from "./Notifications";
 

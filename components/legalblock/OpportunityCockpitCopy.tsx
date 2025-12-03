@@ -30,7 +30,7 @@ const steps = [
   { id: 3, name: "Purpose", description: "Why tokenize this asset" },
 ];
 
-export default function OpportunityCockpit() {
+export default function OpportunityCockpitCopy() {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<Partial<FormData>>({});
   const [errors, setErrors] = useState<Record<string, string>>({});

@@ -61,7 +61,7 @@ interface AnalysisResult {
 const mockOpportunities: Opportunity[] = [
   {
     id: "OPP-001",
-    assetName: "Villa de luxe à Dubai Marina",
+    assetName: "Luxury Villa in Dubai Marina",
     assetType: "real-estate",
     assetValue: 5000000,
     currency: "USD",
@@ -71,7 +71,7 @@ const mockOpportunities: Opportunity[] = [
   },
   {
     id: "OPP-002",
-    assetName: "Concession minière - Or",
+    assetName: "Gold Mining Concession",
     assetType: "mining",
     assetValue: 10000000,
     currency: "USD",
@@ -86,16 +86,16 @@ const mockAnalysis: AnalysisResult = {
     name: "RAK ICC",
     code: "RAK_ICC",
     score: 92,
-    reasoning: "Idéal pour les actifs immobiliers à Dubai. Régime fiscal avantageux, conformité DLD, et reconnaissance internationale.",
+    reasoning: "Ideal for real estate assets in Dubai. Favorable tax regime, DLD compliance, and international recognition.",
     advantages: [
-      "Régime fiscal 0% sur les revenus",
-      "Conformité DLD pour l'immobilier",
-      "Coûts d'incorporation réduits",
-      "Reconnaissance internationale",
+      "0% tax regime on income",
+      "DLD compliance for real estate",
+      "Reduced incorporation costs",
+      "International recognition",
     ],
     disadvantages: [
-      "Moins reconnu que Delaware pour les investisseurs US",
-      "Documentation en anglais requis",
+      "Less recognized than Delaware for US investors",
+      "English documentation required",
     ],
   },
   riskAnalysis: {
@@ -106,16 +106,16 @@ const mockAnalysis: AnalysisResult = {
     regulatory: "compliant",
     risks: [
       {
-        type: "Réglementaire",
+        type: "Regulatory",
         level: "low",
-        description: "Conformité DLD requise pour l'immobilier à Dubai",
-        mitigation: "Utilisation d'un agent enregistré DLD",
+        description: "DLD compliance required for real estate in Dubai",
+        mitigation: "Use of a registered DLD agent",
       },
       {
-        type: "Fiscal",
+        type: "Tax",
         level: "low",
-        description: "Déclaration fiscale dans le pays d'origine du propriétaire",
-        mitigation: "Consultation avec un expert fiscal local",
+        description: "Tax declaration in the owner's country of origin",
+        mitigation: "Consultation with local tax expert",
       },
     ],
   },
@@ -125,14 +125,14 @@ const mockAnalysis: AnalysisResult = {
     capitalGains: "0%",
     withholdingTax: "0%",
     recommendations: [
-      "Structure SPV pour isolation fiscale",
-      "Distribution via dividendes exonérés",
-      "Pas de retenue à la source sur les distributions",
+      "SPV structure for tax isolation",
+      "Distribution via tax-exempt dividends",
+      "No withholding tax on distributions",
     ],
   },
   structureRecommendation: {
     type: "SPV (Special Purpose Vehicle)",
-    description: "Structure optimale pour isoler l'actif et faciliter la tokenisation",
+    description: "Optimal structure to isolate the asset and facilitate tokenization",
     documents: [
       "Articles of Association",
       "Memorandum of Association",
@@ -150,10 +150,13 @@ const mockAnalysis: AnalysisResult = {
   ],
 };
 
+type AnalysisTabId = "jurisdiction" | "risk" | "tax" | "structure";
+
 export default function AdvisorCockpit() {
   const [selectedOpportunity, setSelectedOpportunity] = useState<Opportunity | null>(null);
   const [analysis, setAnalysis] = useState<AnalysisResult | null>(null);
   const [activeTab, setActiveTab] = useState<"opportunities" | "analysis" | "documents">("opportunities");
+  const [activeAnalysisTab, setActiveAnalysisTab] = useState<AnalysisTabId>("jurisdiction");
 
   const handleAnalyze = (opportunity: Opportunity) => {
     setSelectedOpportunity(opportunity);
@@ -191,67 +194,65 @@ export default function AdvisorCockpit() {
   return (
     <div className="mx-auto max-w-7xl">
       {/* Premium Header */}
-      <div className="mb-12 text-center">
+      <div className="mb-12">
         <div className="mb-4 inline-flex items-center space-x-2 rounded-full bg-gradient-to-r from-violet-100 to-purple-100 px-6 py-2 backdrop-blur-sm dark:from-violet-900/30 dark:to-purple-900/30">
-          <span className="text-xl">🤖</span>
           <span className="text-sm font-semibold text-violet-700 dark:text-violet-300">
-            ADVISORBLOCK - Copilote Juridique IA
+            ADVISORBLOCK - Legal AI Copilot
           </span>
         </div>
         <h1 className="mb-3 bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-4xl font-bold text-transparent">
-          Analyse et Recommandations Juridiques
+          Legal Analysis & Recommendations
         </h1>
-        <p className="text-lg text-slate-700 dark:text-slate-300">
-          🔍 Analysez les opportunités soumises et obtenez des recommandations juridiques optimisées
-        </p>
       </div>
 
-      {/* Tabs */}
-      <div className="mb-8 flex space-x-2 border-b border-slate-200 dark:border-slate-700">
-        <button
-          onClick={() => setActiveTab("opportunities")}
-          className={`px-6 py-3 font-semibold transition-colors ${
-            activeTab === "opportunities"
-              ? "border-b-2 border-violet-600 text-violet-600 dark:text-violet-400"
-              : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
-          }`}
-        >
-          📋 Opportunités
-        </button>
-        <button
-          onClick={() => setActiveTab("analysis")}
-          disabled={!analysis}
-          className={`px-6 py-3 font-semibold transition-colors ${
-            activeTab === "analysis"
-              ? "border-b-2 border-violet-600 text-violet-600 dark:text-violet-400"
-              : analysis
-              ? "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
-              : "cursor-not-allowed text-slate-400 dark:text-slate-600"
-          }`}
-        >
-          🔍 Analyse
-        </button>
-        <button
-          onClick={() => setActiveTab("documents")}
-          className={`px-6 py-3 font-semibold transition-colors ${
-            activeTab === "documents"
-              ? "border-b-2 border-violet-600 text-violet-600 dark:text-violet-400"
-              : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
-          }`}
-        >
-          <span className="flex items-center space-x-2">
-            <DocumentIcon className="h-5 w-5" />
-            <span>Documents</span>
-          </span>
-        </button>
+      {/* Main Tabs */}
+      <div className="mb-8">
+        <div className="flex flex-wrap gap-3 overflow-x-auto rounded-2xl bg-white/80 p-2 shadow-lg backdrop-blur-sm dark:bg-slate-800/80">
+          <button
+            onClick={() => setActiveTab("opportunities")}
+            className={`group relative whitespace-nowrap rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 ${
+              activeTab === "opportunities"
+                ? "bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white shadow-lg shadow-violet-500/50"
+                : "text-slate-600 hover:bg-violet-50 hover:text-violet-600 dark:text-slate-400 dark:hover:bg-violet-900/20 dark:hover:text-violet-400"
+            }`}
+          >
+            Opportunities
+          </button>
+          <button
+            onClick={() => setActiveTab("analysis")}
+            disabled={!analysis}
+            className={`group relative whitespace-nowrap rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 ${
+              activeTab === "analysis"
+                ? "bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white shadow-lg shadow-violet-500/50"
+                : analysis
+                ? "text-slate-600 hover:bg-violet-50 hover:text-violet-600 dark:text-slate-400 dark:hover:bg-violet-900/20 dark:hover:text-violet-400"
+                : "cursor-not-allowed text-slate-400 dark:text-slate-600"
+            }`}
+          >
+            Analysis
+          </button>
+          <button
+            onClick={() => setActiveTab("documents")}
+            className={`group relative whitespace-nowrap rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-300 ${
+              activeTab === "documents"
+                ? "bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 text-white shadow-lg shadow-violet-500/50"
+                : "text-slate-600 hover:bg-violet-50 hover:text-violet-600 dark:text-slate-400 dark:hover:bg-violet-900/20 dark:hover:text-violet-400"
+            }`}
+          >
+            <span className="flex items-center space-x-2">
+              <DocumentIcon className="h-4 w-4" />
+              <span>Documents</span>
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* Content */}
-      <div className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-white/90 via-violet-50/30 to-purple-50/30 p-10 shadow-2xl backdrop-blur-xl dark:border-violet-800/50 dark:from-slate-900/90 dark:via-violet-900/20 dark:to-purple-900/20">
+      <div>
         {activeTab === "opportunities" && (
           <div className="space-y-4">
             <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
-              Opportunités en attente d'analyse
+              Opportunities Pending Analysis
             </h2>
             {mockOpportunities.map((opp) => (
               <div
@@ -270,10 +271,10 @@ export default function AdvisorCockpit() {
                         )}`}
                       >
                         {opp.status === "completed"
-                          ? "Analysée"
+                          ? "Analyzed"
                           : opp.status === "analyzing"
-                          ? "En cours"
-                          : "En attente"}
+                          ? "Analyzing"
+                          : "Pending"}
                       </span>
                     </div>
                     <div className="grid gap-2 text-sm text-slate-600 dark:text-slate-400 md:grid-cols-4">
@@ -281,13 +282,13 @@ export default function AdvisorCockpit() {
                         <span className="font-semibold">Type:</span> {opp.assetType}
                       </div>
                       <div>
-                        <span className="font-semibold">Valeur:</span> {opp.assetValue.toLocaleString()} {opp.currency}
+                        <span className="font-semibold">Value:</span> {opp.assetValue.toLocaleString()} {opp.currency}
                       </div>
                       <div>
-                        <span className="font-semibold">Localisation:</span> {opp.location}
+                        <span className="font-semibold">Location:</span> {opp.location}
                       </div>
                       <div>
-                        <span className="font-semibold">Propriétaire:</span> {opp.ownerName}
+                        <span className="font-semibold">Owner:</span> {opp.ownerName}
                       </div>
                     </div>
                   </div>
@@ -300,8 +301,7 @@ export default function AdvisorCockpit() {
                         : "bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg shadow-violet-500/50 hover:scale-105 hover:shadow-xl"
                     }`}
                   >
-                    <span className="text-xl">✨</span>
-                    <span>{opp.status === "analyzing" ? "Analyse en cours..." : "Analyser"}</span>
+                    <span>{opp.status === "analyzing" ? "Analyzing..." : "Analyze"}</span>
                   </button>
                 </div>
               </div>
@@ -311,12 +311,58 @@ export default function AdvisorCockpit() {
 
         {activeTab === "analysis" && analysis && selectedOpportunity && (
           <div className="space-y-8">
+            {/* Analysis Sub-Tabs */}
+            <div className="mb-6">
+              <div className="flex flex-wrap gap-2 overflow-x-auto rounded-xl bg-white/50 p-2 backdrop-blur-sm dark:bg-slate-800/50">
+                <button
+                  onClick={() => setActiveAnalysisTab("jurisdiction")}
+                  className={`whitespace-nowrap rounded-lg px-4 py-2 text-xs font-semibold transition-all ${
+                    activeAnalysisTab === "jurisdiction"
+                      ? "bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-md"
+                      : "text-slate-600 hover:bg-violet-50 hover:text-violet-600 dark:text-slate-400 dark:hover:bg-violet-900/20 dark:hover:text-violet-400"
+                  }`}
+                >
+                  Jurisdiction
+                </button>
+                <button
+                  onClick={() => setActiveAnalysisTab("risk")}
+                  className={`whitespace-nowrap rounded-lg px-4 py-2 text-xs font-semibold transition-all ${
+                    activeAnalysisTab === "risk"
+                      ? "bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-md"
+                      : "text-slate-600 hover:bg-violet-50 hover:text-violet-600 dark:text-slate-400 dark:hover:bg-violet-900/20 dark:hover:text-violet-400"
+                  }`}
+                >
+                  Risk Analysis
+                </button>
+                <button
+                  onClick={() => setActiveAnalysisTab("tax")}
+                  className={`whitespace-nowrap rounded-lg px-4 py-2 text-xs font-semibold transition-all ${
+                    activeAnalysisTab === "tax"
+                      ? "bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-md"
+                      : "text-slate-600 hover:bg-violet-50 hover:text-violet-600 dark:text-slate-400 dark:hover:bg-violet-900/20 dark:hover:text-violet-400"
+                  }`}
+                >
+                  Tax Analysis
+                </button>
+                <button
+                  onClick={() => setActiveAnalysisTab("structure")}
+                  className={`whitespace-nowrap rounded-lg px-4 py-2 text-xs font-semibold transition-all ${
+                    activeAnalysisTab === "structure"
+                      ? "bg-gradient-to-r from-violet-600 to-purple-600 text-white shadow-md"
+                      : "text-slate-600 hover:bg-violet-50 hover:text-violet-600 dark:text-slate-400 dark:hover:bg-violet-900/20 dark:hover:text-violet-400"
+                  }`}
+                >
+                  Structure
+                </button>
+              </div>
+            </div>
+
             {/* Jurisdiction Recommendation */}
-            <div className="rounded-2xl bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-6 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+            {activeAnalysisTab === "jurisdiction" && (
+            <div className="rounded-2xl bg-white p-6 shadow-lg dark:bg-slate-800">
               <div className="mb-4 flex items-center space-x-3">
-                <span className="text-3xl">🌍</span>
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                  Recommandation de Juridiction
+                  Jurisdiction Recommendation
                 </h2>
               </div>
               <div className="mb-4 flex items-center space-x-4">
@@ -336,7 +382,7 @@ export default function AdvisorCockpit() {
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="rounded-lg bg-white p-4 dark:bg-slate-800">
                   <h4 className="mb-2 font-semibold text-emerald-600 dark:text-emerald-400">
-                    ✅ Avantages
+                    Advantages
                   </h4>
                   <ul className="space-y-1 text-sm">
                     {analysis.recommendedJurisdiction.advantages.map((adv, idx) => (
@@ -346,7 +392,7 @@ export default function AdvisorCockpit() {
                 </div>
                 <div className="rounded-lg bg-white p-4 dark:bg-slate-800">
                   <h4 className="mb-2 font-semibold text-amber-600 dark:text-amber-400">
-                    ⚠️ Inconvénients
+                    Disadvantages
                   </h4>
                   <ul className="space-y-1 text-sm">
                     {analysis.recommendedJurisdiction.disadvantages.map((dis, idx) => (
@@ -356,19 +402,20 @@ export default function AdvisorCockpit() {
                 </div>
               </div>
             </div>
+            )}
 
             {/* Risk Analysis */}
-            <div className="rounded-2xl bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-6 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+            {activeAnalysisTab === "risk" && (
+            <div className="rounded-2xl bg-white p-6 shadow-lg dark:bg-slate-800">
               <div className="mb-4 flex items-center space-x-3">
-                <span className="text-3xl">🛡️</span>
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                  Analyse des Risques
+                  Risk Analysis
                 </h2>
               </div>
               <div className="mb-6 grid gap-4 md:grid-cols-4">
                 <div className="rounded-lg bg-white p-4 text-center dark:bg-slate-800">
                   <div className="mb-2 text-sm font-semibold text-slate-600 dark:text-slate-400">
-                    Risque Global
+                    Overall Risk
                   </div>
                   <div
                     className={`inline-block rounded-full px-3 py-1 text-sm font-semibold ${getRiskColor(
@@ -376,10 +423,10 @@ export default function AdvisorCockpit() {
                     )}`}
                   >
                     {analysis.riskAnalysis.overall === "low"
-                      ? "Faible"
+                      ? "Low"
                       : analysis.riskAnalysis.overall === "medium"
-                      ? "Moyen"
-                      : "Élevé"}
+                      ? "Medium"
+                      : "High"}
                   </div>
                 </div>
                 <div className="rounded-lg bg-white p-4 text-center dark:bg-slate-800">
@@ -393,7 +440,7 @@ export default function AdvisorCockpit() {
                         : "bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300"
                     }`}
                   >
-                    {analysis.riskAnalysis.kyc === "passed" ? "Validé" : "En attente"}
+                    {analysis.riskAnalysis.kyc === "passed" ? "Passed" : "Pending"}
                   </div>
                 </div>
                 <div className="rounded-lg bg-white p-4 text-center dark:bg-slate-800">
@@ -407,12 +454,12 @@ export default function AdvisorCockpit() {
                         : "bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300"
                     }`}
                   >
-                    {analysis.riskAnalysis.aml === "passed" ? "Validé" : "En attente"}
+                    {analysis.riskAnalysis.aml === "passed" ? "Passed" : "Pending"}
                   </div>
                 </div>
                 <div className="rounded-lg bg-white p-4 text-center dark:bg-slate-800">
                   <div className="mb-2 text-sm font-semibold text-slate-600 dark:text-slate-400">
-                    Conformité
+                    Compliance
                   </div>
                   <div
                     className={`inline-block rounded-full px-3 py-1 text-sm font-semibold ${
@@ -421,7 +468,7 @@ export default function AdvisorCockpit() {
                         : "bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300"
                     }`}
                   >
-                    {analysis.riskAnalysis.regulatory === "compliant" ? "Conforme" : "Attention"}
+                    {analysis.riskAnalysis.regulatory === "compliant" ? "Compliant" : "Warning"}
                   </div>
                 </div>
               </div>
@@ -438,32 +485,33 @@ export default function AdvisorCockpit() {
                           risk.level
                         )}`}
                       >
-                        {risk.level === "low" ? "Faible" : risk.level === "medium" ? "Moyen" : "Élevé"}
+                        {risk.level === "low" ? "Low" : risk.level === "medium" ? "Medium" : "High"}
                       </span>
                     </div>
                     <p className="mb-2 text-sm text-slate-600 dark:text-slate-400">
                       {risk.description}
                     </p>
                     <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                      💡 Mitigation: {risk.mitigation}
+                      Mitigation: {risk.mitigation}
                     </p>
                   </div>
                 ))}
               </div>
             </div>
+            )}
 
             {/* Tax Analysis */}
-            <div className="rounded-2xl bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-6 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+            {activeAnalysisTab === "tax" && (
+            <div className="rounded-2xl bg-white p-6 shadow-lg dark:bg-slate-800">
               <div className="mb-4 flex items-center space-x-3">
-                <span className="text-3xl">📈</span>
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                  Analyse Fiscale
+                  Tax Analysis
                 </h2>
               </div>
               <div className="mb-4 grid gap-4 md:grid-cols-3">
                 <div className="rounded-lg bg-white p-4 dark:bg-slate-800">
                   <div className="text-sm font-semibold text-slate-600 dark:text-slate-400">
-                    Impôt sur les Sociétés
+                    Corporate Tax
                   </div>
                   <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                     {analysis.taxAnalysis.corporateTax}
@@ -471,7 +519,7 @@ export default function AdvisorCockpit() {
                 </div>
                 <div className="rounded-lg bg-white p-4 dark:bg-slate-800">
                   <div className="text-sm font-semibold text-slate-600 dark:text-slate-400">
-                    Plus-values
+                    Capital Gains
                   </div>
                   <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                     {analysis.taxAnalysis.capitalGains}
@@ -479,7 +527,7 @@ export default function AdvisorCockpit() {
                 </div>
                 <div className="rounded-lg bg-white p-4 dark:bg-slate-800">
                   <div className="text-sm font-semibold text-slate-600 dark:text-slate-400">
-                    Retenue à la source
+                    Withholding Tax
                   </div>
                   <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">
                     {analysis.taxAnalysis.withholdingTax}
@@ -488,7 +536,7 @@ export default function AdvisorCockpit() {
               </div>
               <div className="rounded-lg bg-white p-4 dark:bg-slate-800">
                 <h4 className="mb-2 font-semibold text-slate-900 dark:text-white">
-                  Recommandations Fiscales
+                  Tax Recommendations
                 </h4>
                 <ul className="space-y-1 text-sm">
                   {analysis.taxAnalysis.recommendations.map((rec, idx) => (
@@ -497,13 +545,14 @@ export default function AdvisorCockpit() {
                 </ul>
               </div>
             </div>
+            )}
 
             {/* Structure Recommendation */}
-            <div className="rounded-2xl bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-6 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+            {activeAnalysisTab === "structure" && (
+            <div className="rounded-2xl bg-white p-6 shadow-lg dark:bg-slate-800">
               <div className="mb-4 flex items-center space-x-3">
-                <span className="text-3xl">🏢</span>
                 <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
-                  Recommandation de Structure
+                  Structure Recommendation
                 </h2>
               </div>
               <div className="mb-4 rounded-lg bg-white p-4 dark:bg-slate-800">
@@ -516,7 +565,7 @@ export default function AdvisorCockpit() {
               </div>
               <div>
                 <h4 className="mb-2 font-semibold text-slate-900 dark:text-white">
-                  Documents requis
+                  Required Documents
                 </h4>
                 <div className="grid gap-2 md:grid-cols-2">
                   {analysis.structureRecommendation.documents.map((doc, idx) => (
@@ -524,26 +573,26 @@ export default function AdvisorCockpit() {
                       key={idx}
                       className="flex items-center space-x-2 rounded-lg bg-white p-3 dark:bg-slate-800"
                     >
-                      <span className="text-xl">📄</span>
                       <span className="text-sm">{doc}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
+            )}
           </div>
         )}
 
         {activeTab === "documents" && (
           <div className="space-y-4">
             <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
-              Documents Générés
+              Generated Documents
             </h2>
             {analysis ? (
               <>
                 <div className="mb-6 rounded-xl bg-gradient-to-r from-violet-50 to-purple-50 p-4 dark:from-violet-900/20 dark:to-purple-900/20">
                   <p className="text-sm font-semibold text-violet-700 dark:text-violet-300">
-                    📋 Documents pour l'opportunité analysée
+                    Documents for analyzed opportunity
                   </p>
                 </div>
                 {analysis.documents.map((doc, idx) => (
@@ -571,14 +620,14 @@ export default function AdvisorCockpit() {
                         }`}
                       >
                         {doc.status === "generated"
-                          ? "Généré"
+                          ? "Generated"
                           : doc.status === "pending"
-                          ? "En attente"
-                          : "Requis"}
+                          ? "Pending"
+                          : "Required"}
                       </span>
                       {doc.status === "generated" && (
                         <button className="rounded-lg bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-lg">
-                          Télécharger
+                          Download
                         </button>
                       )}
                     </div>
@@ -590,23 +639,23 @@ export default function AdvisorCockpit() {
                 <div className="rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 p-12 text-center dark:border-slate-700 dark:bg-slate-800/50">
                   <DocumentIcon className="mx-auto mb-4 h-16 w-16 text-slate-400 dark:text-slate-600" />
                   <h3 className="mb-2 text-xl font-semibold text-slate-700 dark:text-slate-300">
-                    Aucun document généré
+                    No documents generated
                   </h3>
                   <p className="text-slate-600 dark:text-slate-400">
-                    Analysez une opportunité pour générer les documents juridiques
+                    Analyze an opportunity to generate legal documents
                   </p>
                   <button
                     onClick={() => setActiveTab("opportunities")}
                     className="mt-6 rounded-lg bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 px-6 py-3 font-semibold text-white transition-all hover:scale-105 hover:shadow-lg"
                   >
-                    Voir les opportunités
+                    View Opportunities
                   </button>
                 </div>
 
                 {/* Liste des documents disponibles */}
-                <div className="rounded-xl bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-6 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+                <div className="rounded-xl bg-white p-6 shadow-lg dark:bg-slate-800">
                   <h3 className="mb-4 text-xl font-bold text-slate-900 dark:text-white">
-                    Types de documents disponibles
+                    Available Document Types
                   </h3>
                   <div className="grid gap-3 md:grid-cols-2">
                     {[

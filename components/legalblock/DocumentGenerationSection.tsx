@@ -2,40 +2,40 @@ import { DocumentIcon } from "@/components/icons/GeneralIcons";
 
 export default function DocumentGenerationSection() {
   const documents = [
-    { name: "Operating Agreement", category: "SPV", description: "Accord d'exploitation de la structure SPV" },
-    { name: "Articles of Association", category: "SPV", description: "Statuts de la société" },
-    { name: "Shareholders Agreement", category: "SPV", description: "Accord entre actionnaires" },
-    { name: "Security Interest Agreement", category: "Garantie", description: "Accord d'intérêt de sécurité" },
-    { name: "Pledge Agreement", category: "Garantie", description: "Accord de gage" },
-    { name: "Fiducie-sûreté / Collateral Agreement", category: "Garantie", description: "Accord de fiducie-sûreté" },
-    { name: "Contrat de Prêt", category: "Financement", description: "Contrat de prêt sécurisé" },
-    { name: "Term Sheet", category: "Financement", description: "Fiche de conditions" },
-    { name: "Résolutions SPV", category: "SPV", description: "Résolutions de l'assemblée" },
-    { name: "NFT Master Token + metadata juridique", category: "Tokenisation", description: "NFT avec métadonnées juridiques embarquées" },
-    { name: "Fractionalisation ERC-20", category: "Tokenisation", description: "Smart contract ERC-20 pour parts" },
-    { name: "Fiches de dépôt et filings", category: "Administratif", description: "Documents pour dépôt aux autorités" },
+    { name: "Operating Agreement", category: "SPV", description: "SPV structure operating agreement" },
+    { name: "Articles of Association", category: "SPV", description: "Company articles of association" },
+    { name: "Shareholders Agreement", category: "SPV", description: "Shareholders agreement" },
+    { name: "Security Interest Agreement", category: "Guarantee", description: "Security interest agreement" },
+    { name: "Pledge Agreement", category: "Guarantee", description: "Pledge agreement" },
+    { name: "Collateral Agreement", category: "Guarantee", description: "Collateral trust agreement" },
+    { name: "Loan Agreement", category: "Financing", description: "Secured loan contract" },
+    { name: "Term Sheet", category: "Financing", description: "Term sheet" },
+    { name: "SPV Resolutions", category: "SPV", description: "Assembly resolutions" },
+    { name: "NFT Master Token + legal metadata", category: "Tokenization", description: "NFT with embedded legal metadata" },
+    { name: "ERC-20 Fractionalization", category: "Tokenization", description: "ERC-20 smart contract for shares" },
+    { name: "Filing documents and filings", category: "Administrative", description: "Documents for filing with authorities" },
   ];
 
   const categories = Array.from(new Set(documents.map((d) => d.category)));
 
   return (
-    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+    <section className="rounded-2xl bg-white p-8 shadow-lg dark:bg-slate-800">
       <div className="mb-8 flex items-center space-x-4">
         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
           <DocumentIcon className="h-7 w-7 text-white" />
         </div>
         <div>
           <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
-            Section 5 : Génération automatique de documents
+            Section 5: Automatic Document Generation
           </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400">Templates et personnalisation IA</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Templates and AI customization</p>
         </div>
       </div>
 
       <div className="space-y-8">
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Liste complète des documents générés
+            Complete list of generated documents
           </h3>
           <div className="space-y-6">
             {categories.map((category) => (
@@ -67,7 +67,7 @@ export default function DocumentGenerationSection() {
 
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Processus de génération
+            Generation process
           </h3>
           <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
             <ol className="space-y-3">
@@ -75,37 +75,37 @@ export default function DocumentGenerationSection() {
                 <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-600 text-white shadow-lg">
                   1
                 </span>
-                <span className="text-slate-700 dark:text-slate-300">Récupération des données de l'opportunité et de la stratégie sélectionnée</span>
+                <span className="text-slate-700 dark:text-slate-300">Retrieval of opportunity data and selected strategy</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-600 text-white shadow-lg">
                   2
                 </span>
-                <span className="text-slate-700 dark:text-slate-300">Sélection des templates appropriés selon la juridiction et structure</span>
+                <span className="text-slate-700 dark:text-slate-300">Selection of appropriate templates according to jurisdiction and structure</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-600 text-white shadow-lg">
                   3
                 </span>
-                <span className="text-slate-700 dark:text-slate-300">Remplissage automatique des champs avec les données</span>
+                <span className="text-slate-700 dark:text-slate-300">Automatic filling of fields with data</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-600 text-white shadow-lg">
                   4
                 </span>
-                <span className="text-slate-700 dark:text-slate-300">Génération des clauses personnalisées par ADVISORBLOCK</span>
+                <span className="text-slate-700 dark:text-slate-300">Generation of personalized clauses by ADVISORBLOCK</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-600 text-white shadow-lg">
                   5
                 </span>
-                <span className="text-slate-700 dark:text-slate-300">Validation et vérification de cohérence</span>
+                <span className="text-slate-700 dark:text-slate-300">Validation and consistency verification</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-violet-600 to-purple-600 text-white shadow-lg">
                   6
                 </span>
-                <span className="text-slate-700 dark:text-slate-300">Export en formats multiples (PDF, DOCX, JSON pour smart contracts)</span>
+                <span className="text-slate-700 dark:text-slate-300">Export in multiple formats (PDF, DOCX, JSON for smart contracts)</span>
               </li>
             </ol>
           </div>
@@ -113,48 +113,48 @@ export default function DocumentGenerationSection() {
 
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Templates et personnalisation
+            Templates and customization
           </h3>
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
-              <h4 className="mb-3 font-semibold text-violet-700 dark:text-violet-300">Templates de Base</h4>
+              <h4 className="mb-3 font-semibold text-violet-700 dark:text-violet-300">Base Templates</h4>
               <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 <li className="flex items-start">
                   <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
-                  <span>Templates par juridiction (RAK ICC, Delaware, etc.)</span>
+                  <span>Templates by jurisdiction (RAK ICC, Delaware, etc.)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
-                  <span>Templates par type de structure (SPV, LLC, etc.)</span>
+                  <span>Templates by structure type (SPV, LLC, etc.)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
-                  <span>Templates par type d'actif</span>
+                  <span>Templates by asset type</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
-                  <span>Clauses standards validées juridiquement</span>
+                  <span>Legally validated standard clauses</span>
                 </li>
               </ul>
             </div>
             <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
-              <h4 className="mb-3 font-semibold text-violet-700 dark:text-violet-300">Personnalisation IA</h4>
+              <h4 className="mb-3 font-semibold text-violet-700 dark:text-violet-300">AI Customization</h4>
               <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
                 <li className="flex items-start">
                   <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
-                  <span>Génération de clauses adaptées au contexte</span>
+                  <span>Generation of context-adapted clauses</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
-                  <span>Optimisation selon les objectifs</span>
+                  <span>Optimization according to objectives</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
-                  <span>Adaptation aux contraintes réglementaires</span>
+                  <span>Adaptation to regulatory constraints</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
-                  <span>Intégration des spécificités de l'actif</span>
+                  <span>Integration of asset specificities</span>
                 </li>
               </ul>
             </div>

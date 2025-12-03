@@ -1,5 +1,5 @@
 type SectionColor = "purple" | "blue" | "green" | "orange";
-type Category = "légal" | "mécanisme" | "code" | "analyse";
+type Category = "legal" | "mechanism" | "code" | "analysis";
 
 interface SectionCard {
   title: string;
@@ -19,95 +19,95 @@ interface Section {
 
 export const sectionsData: Section[] = [
   {
-    title: "⚖️ Section Légale",
-    subtitle: "Tous les aspects juridiques, compliance et cadres réglementaires",
+    title: "⚖️ Legal Section",
+    subtitle: "All legal aspects, compliance and regulatory frameworks",
     color: "purple",
     gridCols: "md:grid-cols-2 lg:grid-cols-3",
     cards: [
       {
-        title: "LEGALBLOCK - Automatisation Juridique",
+        title: "LEGALBLOCK - Legal Automation",
         description:
-          "Plateforme complète d'automatisation juridique avec ADVISORBLOCK, génération automatique de documents et tokenisation",
+          "Complete legal automation platform with ADVISORBLOCK, automatic document generation and tokenization",
         href: "/legalblock",
         icon: "🏛️",
-        category: "légal",
+        category: "legal",
       },
       {
-        title: "Notes Juridiques UAE/USA",
+        title: "Legal Notes UAE/USA",
         description:
-          "Framework juridique complet pour RAK ICC (UAE) et Delaware LLC (USA), compliance, réglementations et meilleures pratiques",
+          "Complete legal framework for RAK ICC (UAE) and Delaware LLC (USA), compliance, regulations and best practices",
         href: "/legal-notes",
         icon: "📜",
-        category: "légal",
+        category: "legal",
       },
       {
-        title: "Structure SPV",
+        title: "SPV Structure",
         description:
-          "Création et fonctionnement des Special Purpose Vehicles, incorporation, transfert d'actifs et modifications de l'Operating Agreement",
+          "Creation and operation of Special Purpose Vehicles, incorporation, asset transfer and Operating Agreement modifications",
         href: "/spv-structure",
         icon: "🏢",
-        category: "légal",
+        category: "legal",
       },
       {
-        title: "Luxury Goods - Cadre Juridique",
+        title: "Luxury Goods - Legal Framework",
         description:
-          "Financement et tokenisation des biens de luxe avec Security Interest, Pledge Agreement et cadre juridique MENA/USA",
+          "Financing and tokenization of luxury goods with Security Interest, Pledge Agreement and MENA/USA legal framework",
         href: "/luxury-goods",
         icon: "💎",
-        category: "légal",
+        category: "legal",
       },
     ],
   },
   {
-    title: "⚙️ Section Mécanismes",
-    subtitle: "Comment fonctionne la tokenisation : processus techniques et opérationnels",
+    title: "⚙️ Mechanisms Section",
+    subtitle: "How tokenization works: technical and operational processes",
     color: "blue",
     gridCols: "md:grid-cols-2 lg:grid-cols-3",
     cards: [
       {
         title: "NFT Master Ownership",
         description:
-          "Comment un NFT ERC-721 représente 100% des parts SPV, mécanisme de transfert et registre on-chain",
+          "How an ERC-721 NFT represents 100% of SPV shares, transfer mechanism and on-chain registry",
         href: "/nft-master",
         icon: "🎫",
-        category: "mécanisme",
+        category: "mechanism",
       },
       {
-        title: "Fractionalisation ERC-20",
+        title: "ERC-20 Fractionalization",
         description:
-          "Mécanisme de verrouillage du NFT Master, création de parts ERC-20, distribution automatique des revenus",
+          "NFT Master locking mechanism, ERC-20 shares creation, automatic revenue distribution",
         href: "/fractionalization",
         icon: "💰",
-        category: "mécanisme",
+        category: "mechanism",
       },
       {
-        title: "Flux Complet",
+        title: "Complete Flow",
         description:
-          "Visualisation du processus complet de tokenisation, du SPV aux parts ERC-20",
+          "Visualization of the complete tokenization process, from SPV to ERC-20 shares",
         href: "/templates",
         icon: "🔄",
-        category: "mécanisme",
+        category: "mechanism",
       },
     ],
   },
   {
-    title: "💻 Section Smart Contracts",
-    subtitle: "Code des contrats, architecture technique et implémentation",
+    title: "💻 Smart Contracts Section",
+    subtitle: "Contract code, technical architecture and implementation",
     color: "green",
     gridCols: "md:grid-cols-2",
     cards: [
       {
         title: "Templates & Code",
         description:
-          "Exemples de code, smart contracts, templates EJS et React pour l'implémentation",
+          "Code examples, smart contracts, EJS and React templates for implementation",
         href: "/templates",
         icon: "⚡",
         category: "code",
       },
       {
-        title: "Architecture Technique",
+        title: "Technical Architecture",
         description:
-          "Structure des smart contracts, vault, distribution automatique et mécanismes de sécurité",
+          "Smart contracts structure, vault, automatic distribution and security mechanisms",
         href: "/fractionalization",
         icon: "🏗️",
         category: "code",
@@ -115,18 +115,18 @@ export const sectionsData: Section[] = [
     ],
   },
   {
-    title: "📊 Section Analyse",
-    subtitle: "Comparaisons, avantages, inconvénients et recommandations",
+    title: "📊 Analysis Section",
+    subtitle: "Comparisons, advantages, disadvantages and recommendations",
     color: "orange",
     gridCols: "md:grid-cols-1",
     cards: [
       {
-        title: "Comparaison & Résumé Exécutif",
+        title: "Comparison & Executive Summary",
         description:
-          "Comparaison détaillée des structures, avantages/inconvénients, roadmap d'implémentation et recommandations finales",
+          "Detailed comparison of structures, advantages/disadvantages, implementation roadmap and final recommendations",
         href: "/comparison",
         icon: "📊",
-        category: "analyse",
+        category: "analysis",
       },
     ],
   },

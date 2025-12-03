@@ -8,7 +8,7 @@ export default function QuickNavigation() {
       <div className="mb-6 flex items-center space-x-3">
         <BoltIcon className="h-8 w-8 text-violet-600 dark:text-violet-400" />
         <h2 className="text-2xl font-bold bg-gradient-to-r from-violet-600 to-purple-600 bg-clip-text text-transparent">
-          Navigation Rapide
+          Quick Navigation
         </h2>
       </div>
       <div className="flex flex-wrap gap-3">

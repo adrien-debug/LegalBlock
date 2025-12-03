@@ -2,56 +2,56 @@ import { LockClosedIcon } from "@/components/icons/SectionIcons";
 
 export default function GovernanceSection() {
   return (
-    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+    <section className="rounded-2xl bg-white p-8 shadow-lg dark:bg-slate-800">
       <div className="mb-8 flex items-center space-x-4">
         <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
           <LockClosedIcon className="h-7 w-7 text-white" />
         </div>
         <div>
           <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
-            Section 10 : Gouvernance et sécurité
+            Section 10: Governance and Security
           </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400">Contrôles d'accès et audit</p>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Access controls and audit</p>
         </div>
       </div>
 
       <div className="space-y-8">
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Contrôles d'accès
+            Access controls
           </h3>
           <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
               <h4 className="mb-3 font-semibold text-indigo-600 dark:text-indigo-400">
-                Rôles et Permissions
+                Roles and Permissions
               </h4>
               <ul className="space-y-2 text-sm">
-                <li>• Administrateur système</li>
-                <li>• Expert juridique</li>
-                <li>• Opérateur</li>
-                <li>• Lecteur seule</li>
+                <li>• System administrator</li>
+                <li>• Legal expert</li>
+                <li>• Operator</li>
+                <li>• Read-only</li>
               </ul>
             </div>
             <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
               <h4 className="mb-3 font-semibold text-indigo-600 dark:text-indigo-400">
-                Authentification
+                Authentication
               </h4>
               <ul className="space-y-2 text-sm">
-                <li>• Authentification multi-facteurs</li>
-                <li>• SSO intégration</li>
-                <li>• Gestion des sessions</li>
-                <li>• Audit des connexions</li>
+                <li>• Multi-factor authentication</li>
+                <li>• SSO integration</li>
+                <li>• Session management</li>
+                <li>• Login audit</li>
               </ul>
             </div>
             <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
               <h4 className="mb-3 font-semibold text-indigo-600 dark:text-indigo-400">
-                Autorisations
+                Authorizations
               </h4>
               <ul className="space-y-2 text-sm">
-                <li>• Contrôle granulaire</li>
-                <li>• Approbations multi-niveaux</li>
-                <li>• Restrictions par projet</li>
-                <li>• Expiration automatique</li>
+                <li>• Granular control</li>
+                <li>• Multi-level approvals</li>
+                <li>• Project-based restrictions</li>
+                <li>• Automatic expiration</li>
               </ul>
             </div>
           </div>
@@ -59,27 +59,27 @@ export default function GovernanceSection() {
 
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Traçabilité des décisions
+            Decision traceability
           </h3>
           <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
             <div className="grid gap-4 md:grid-cols-2">
               <div>
-                <h4 className="mb-3 font-semibold">Événements tracés</h4>
+                <h4 className="mb-3 font-semibold">Tracked Events</h4>
                 <ul className="space-y-2 text-sm">
-                  <li>• Création d'opportunité</li>
-                  <li>• Décisions d'ADVISORBLOCK</li>
-                  <li>• Modifications de documents</li>
-                  <li>• Approbations et rejets</li>
-                  <li>• Envois et dispatches</li>
+                  <li>• Opportunity creation</li>
+                  <li>• ADVISORBLOCK decisions</li>
+                  <li>• Document modifications</li>
+                  <li>• Approvals and rejections</li>
+                  <li>• Dispatches and sends</li>
                 </ul>
               </div>
               <div>
-                <h4 className="mb-3 font-semibold">Informations enregistrées</h4>
+                <h4 className="mb-3 font-semibold">Recorded Information</h4>
                 <ul className="space-y-2 text-sm">
-                  <li>• Utilisateur et timestamp</li>
-                  <li>• Justification de la décision</li>
-                  <li>• Données avant/après modification</li>
-                  <li>• Contexte et métadonnées</li>
+                  <li>• User and timestamp</li>
+                  <li>• Decision justification</li>
+                  <li>• Data before/after modification</li>
+                  <li>• Context and metadata</li>
                 </ul>
               </div>
             </div>
@@ -94,9 +94,9 @@ export default function GovernanceSection() {
             <div className="space-y-4">
               <div className="flex items-center justify-between rounded-lg border-2 border-indigo-200 p-4 dark:border-indigo-800">
                 <div>
-                  <h4 className="font-semibold">Log complet</h4>
+                  <h4 className="font-semibold">Complete Log</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Tous les événements sont enregistrés de manière immuable
+                    All events are recorded immutably
                   </p>
                 </div>
                 <span className="rounded bg-green-100 px-3 py-1 text-xs text-green-700 dark:bg-green-900/50 dark:text-green-300">
@@ -105,24 +105,24 @@ export default function GovernanceSection() {
               </div>
               <div className="flex items-center justify-between rounded-lg border-2 border-indigo-200 p-4 dark:border-indigo-800">
                 <div>
-                  <h4 className="font-semibold">Rapports d'audit</h4>
+                  <h4 className="font-semibold">Audit Reports</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Génération automatique de rapports pour compliance
+                    Automatic report generation for compliance
                   </p>
                 </div>
                 <span className="rounded bg-green-100 px-3 py-1 text-xs text-green-700 dark:bg-green-900/50 dark:text-green-300">
-                  Automatique
+                  Automatic
                 </span>
               </div>
               <div className="flex items-center justify-between rounded-lg border-2 border-indigo-200 p-4 dark:border-indigo-800">
                 <div>
-                  <h4 className="font-semibold">Export et archivage</h4>
+                  <h4 className="font-semibold">Export and Archiving</h4>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
-                    Export des logs pour archivage long terme
+                    Log export for long-term archiving
                   </p>
                 </div>
                 <span className="rounded bg-green-100 px-3 py-1 text-xs text-green-700 dark:bg-green-900/50 dark:text-green-300">
-                  Disponible
+                  Available
                 </span>
               </div>
             </div>
@@ -131,7 +131,7 @@ export default function GovernanceSection() {
 
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Versioning des documents
+            Document versioning
           </h3>
           <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
             <ol className="space-y-3">
@@ -139,25 +139,25 @@ export default function GovernanceSection() {
                 <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 text-white">
                   1
                 </span>
-                <span>Chaque modification crée une nouvelle version</span>
+                <span>Each modification creates a new version</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 text-white">
                   2
                 </span>
-                <span>Historique complet accessible à tout moment</span>
+                <span>Complete history accessible at any time</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 text-white">
                   3
                 </span>
-                <span>Comparaison entre versions</span>
+                <span>Comparison between versions</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-3 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 text-white">
                   4
                 </span>
-                <span>Restauration à une version antérieure</span>
+                <span>Restoration to a previous version</span>
               </li>
             </ol>
           </div>
@@ -165,29 +165,29 @@ export default function GovernanceSection() {
 
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
-            Signatures électroniques
+            Electronic signatures
           </h3>
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
               <h4 className="mb-3 font-semibold text-indigo-600 dark:text-indigo-400">
-                Types de signatures
+                Signature Types
               </h4>
               <ul className="space-y-2 text-sm">
-                <li>• Signature électronique simple</li>
-                <li>• Signature électronique avancée</li>
-                <li>• Signature électronique qualifiée (eIDAS)</li>
-                <li>• Signature blockchain (hash on-chain)</li>
+                <li>• Simple electronic signature</li>
+                <li>• Advanced electronic signature</li>
+                <li>• Qualified electronic signature (eIDAS)</li>
+                <li>• Blockchain signature (on-chain hash)</li>
               </ul>
             </div>
             <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
               <h4 className="mb-3 font-semibold text-indigo-600 dark:text-indigo-400">
-                Processus
+                Process
               </h4>
               <ul className="space-y-2 text-sm">
-                <li>• Workflow de signature multi-parties</li>
-                <li>• Notifications automatiques</li>
-                <li>• Traçabilité complète</li>
-                <li>• Intégration avec prestataires tiers</li>
+                <li>• Multi-party signature workflow</li>
+                <li>• Automatic notifications</li>
+                <li>• Complete traceability</li>
+                <li>• Integration with third-party providers</li>
               </ul>
             </div>
           </div>
