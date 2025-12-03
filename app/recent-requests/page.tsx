@@ -5,9 +5,9 @@ import Link from "next/link";
 import { 
   ClockIcon, 
   ArrowRightIcon, 
-  ArrowLeftIcon,
-  SearchIcon
+  ArrowLeftIcon
 } from "@/components/icons/GeneralIcons";
+import { SearchIcon } from "@/components/icons/SectionIcons";
 import { RealEstateIcon, MiningIcon, LuxuryIcon, BusinessIcon, CreditIcon, RwaIcon } from "@/components/icons/AssetIcons";
 
 interface RecentRequest {

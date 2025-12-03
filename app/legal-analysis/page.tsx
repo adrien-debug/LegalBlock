@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { SearchIcon, DocumentIcon, CheckIcon, ArrowLeftIcon, ArrowRightIcon, XIcon } from "@/components/icons/GeneralIcons";
+import { DocumentIcon, CheckIcon, ArrowLeftIcon, ArrowRightIcon, XIcon } from "@/components/icons/GeneralIcons";
+import { SearchIcon } from "@/components/icons/SectionIcons";
 
 interface AnalysisItem {
   id: string;

@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { DocumentIcon, CodeIcon, SearchIcon, ChartIcon } from "@/components/icons/GeneralIcons";
+import { DocumentIcon, CodeIcon, ChartIcon } from "@/components/icons/GeneralIcons";
+import { SearchIcon } from "@/components/icons/SectionIcons";
 import Link from "next/link";
 
 type StudyCategory = "legal" | "technical" | "analysis" | "implementation";
