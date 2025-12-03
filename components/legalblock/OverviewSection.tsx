@@ -1,9 +1,19 @@
+import { ClipboardIcon } from "@/components/icons/SectionIcons";
+
 export default function OverviewSection() {
   return (
-    <section className="rounded-2xl bg-gradient-to-br from-purple-50 to-indigo-50 p-8 shadow-lg dark:from-purple-900/20 dark:to-indigo-900/20">
-      <h2 className="mb-6 text-3xl font-bold text-slate-900 dark:text-white">
-        📋 Section 1 : Vue d'ensemble LEGALBLOCK
-      </h2>
+    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+      <div className="mb-8 flex items-center space-x-4">
+        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
+          <ClipboardIcon className="h-7 w-7 text-white" />
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
+            Section 1 : Vue d'ensemble LEGALBLOCK
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Architecture et objectifs</p>
+        </div>
+      </div>
 
       <div className="space-y-6 text-slate-700 dark:text-slate-300">
         <div>
@@ -47,11 +57,11 @@ export default function OverviewSection() {
         </div>
 
         <div>
-          <h3 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">
+          <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
             Architecture générale
           </h3>
-          <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
-            <pre className="overflow-x-auto text-sm">
+          <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
+            <pre className="overflow-x-auto text-sm font-mono text-slate-700 dark:text-slate-300">
 {`LEGALBLOCK Architecture
 ├── Opportunity Intake
 │   └── Formulaire d'opportunité

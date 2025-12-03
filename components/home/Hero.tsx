@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { SparklesIcon2, RocketIcon } from "@/components/icons/GeneralIcons";
-import { BuildingIcon, RocketIcon as RocketIconSection } from "@/components/icons/SectionIcons";
+import { SparklesIcon2 } from "@/components/icons/GeneralIcons";
+import { BuildingIcon, RocketIcon, RobotIcon } from "@/components/icons/SectionIcons";
+
+const RocketIconSection = RocketIcon;
 
 export default function Hero() {
   return (

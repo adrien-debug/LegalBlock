@@ -1,3 +1,5 @@
+import { CogIcon } from "@/components/icons/SectionIcons";
+
 export default function TechnicalModulesSection() {
   const modules = [
     {
@@ -103,22 +105,35 @@ export default function TechnicalModulesSection() {
   ];
 
   return (
-    <section className="rounded-2xl bg-gradient-to-br from-slate-50 to-blue-50 p-8 shadow-lg dark:from-slate-800 dark:to-blue-900/20">
-      <h2 className="mb-6 text-3xl font-bold text-slate-900 dark:text-white">
-        ⚙️ Section 6 : Modules techniques
-      </h2>
+    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+      <div className="mb-8 flex items-center space-x-4">
+        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
+          <CogIcon className="h-7 w-7 text-white" />
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
+            Section 6 : Modules techniques
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Architecture technique complète</p>
+        </div>
+      </div>
 
       <div className="space-y-6">
         {modules.map((module, index) => (
           <div
             key={module.name}
-            className="rounded-lg border-2 border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800"
+            className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80"
           >
             <div className="mb-4 flex items-start justify-between">
               <div>
-                <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
-                  {index + 1}. {module.name}
-                </h3>
+                <div className="mb-2 flex items-center space-x-3">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-violet-100 to-purple-100 dark:from-violet-900/50 dark:to-purple-900/50">
+                    <span className="text-sm font-bold text-violet-600 dark:text-violet-400">{index + 1}</span>
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                    {module.name}
+                  </h3>
+                </div>
                 <p className="mt-1 text-slate-600 dark:text-slate-400">{module.description}</p>
               </div>
             </div>
@@ -126,10 +141,10 @@ export default function TechnicalModulesSection() {
               {module.details.map((detail, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start rounded-lg bg-slate-50 p-3 dark:bg-slate-700/50"
+                  className="flex items-start rounded-lg bg-violet-50/50 p-3 dark:bg-violet-900/20"
                 >
-                  <span className="mr-2 text-indigo-600 dark:text-indigo-400">•</span>
-                  <span className="text-sm">{detail}</span>
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span className="text-sm text-slate-700 dark:text-slate-300">{detail}</span>
                 </div>
               ))}
             </div>

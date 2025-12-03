@@ -1,3 +1,5 @@
+import { SearchIcon } from "@/components/icons/SectionIcons";
+
 export default function AnalysisProcessSection() {
   const jurisdictions = [
     { code: "RAK_ICC", name: "RAK ICC", description: "Ras Al Khaimah International Corporate Centre (UAE)" },
@@ -19,37 +21,45 @@ export default function AnalysisProcessSection() {
   ];
 
   return (
-    <section className="rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 p-8 shadow-lg dark:from-orange-900/20 dark:to-amber-900/20">
-      <h2 className="mb-6 text-3xl font-bold text-slate-900 dark:text-white">
-        🔍 Section 4 : Processus d'analyse automatisée
-      </h2>
+    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+      <div className="mb-8 flex items-center space-x-4">
+        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
+          <SearchIcon className="h-7 w-7 text-white" />
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
+            Section 4 : Processus d'analyse automatisée
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Analyse et recommandations</p>
+        </div>
+      </div>
 
       <div className="space-y-8">
         <div>
           <h3 className="mb-4 text-xl font-semibold text-slate-900 dark:text-white">
             Comment ADVISORBLOCK lit et analyse une opportunité
           </h3>
-          <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
+          <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
             <ol className="space-y-3">
               <li className="flex items-start">
-                <span className="mr-3 text-indigo-600 dark:text-indigo-400">→</span>
-                <span>Extraction et structuration des données du formulaire</span>
+                <span className="mr-3 text-violet-600 dark:text-violet-400">→</span>
+                <span className="text-slate-700 dark:text-slate-300">Extraction et structuration des données du formulaire</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-indigo-600 dark:text-indigo-400">→</span>
-                <span>Analyse des documents uploadés (OCR + NLP)</span>
+                <span className="mr-3 text-violet-600 dark:text-violet-400">→</span>
+                <span className="text-slate-700 dark:text-slate-300">Analyse des documents uploadés (OCR + NLP)</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-indigo-600 dark:text-indigo-400">→</span>
-                <span>Application du moteur de règles juridiques</span>
+                <span className="mr-3 text-violet-600 dark:text-violet-400">→</span>
+                <span className="text-slate-700 dark:text-slate-300">Application du moteur de règles juridiques</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-indigo-600 dark:text-indigo-400">→</span>
-                <span>Analyse contextuelle par le moteur LLM</span>
+                <span className="mr-3 text-violet-600 dark:text-violet-400">→</span>
+                <span className="text-slate-700 dark:text-slate-300">Analyse contextuelle par le moteur LLM</span>
               </li>
               <li className="flex items-start">
-                <span className="mr-3 text-indigo-600 dark:text-indigo-400">→</span>
-                <span>Génération de recommandations avec scoring</span>
+                <span className="mr-3 text-violet-600 dark:text-violet-400">→</span>
+                <span className="text-slate-700 dark:text-slate-300">Génération de recommandations avec scoring</span>
               </li>
             </ol>
           </div>
@@ -60,29 +70,62 @@ export default function AnalysisProcessSection() {
             Décision automatique de la stratégie juridique optimale
           </h3>
           <div className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
-              <h4 className="mb-3 font-semibold text-indigo-600 dark:text-indigo-400">
+            <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
+              <h4 className="mb-3 font-semibold text-violet-600 dark:text-violet-400">
                 Critères d'évaluation
               </h4>
-              <ul className="space-y-2 text-sm">
-                <li>• Type d'actif et valeur</li>
-                <li>• Juridiction du propriétaire</li>
-                <li>• Objectifs fiscaux</li>
-                <li>• Contraintes réglementaires</li>
-                <li>• Coûts d'incorporation</li>
-                <li>• Flexibilité opérationnelle</li>
+              <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Type d'actif et valeur</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Juridiction du propriétaire</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Objectifs fiscaux</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Contraintes réglementaires</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Coûts d'incorporation</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Flexibilité opérationnelle</span>
+                </li>
               </ul>
             </div>
-            <div className="rounded-lg bg-white p-6 dark:bg-slate-800">
-              <h4 className="mb-3 font-semibold text-indigo-600 dark:text-indigo-400">
+            <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-6 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
+              <h4 className="mb-3 font-semibold text-violet-600 dark:text-violet-400">
                 Algorithme de décision
               </h4>
-              <ul className="space-y-2 text-sm">
-                <li>• Scoring multi-critères</li>
-                <li>• Comparaison des options</li>
-                <li>• Optimisation des coûts</li>
-                <li>• Minimisation des risques</li>
-                <li>• Conformité garantie</li>
+              <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Scoring multi-critères</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Comparaison des options</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Optimisation des coûts</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Minimisation des risques</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-violet-600 dark:text-violet-400">•</span>
+                  <span>Conformité garantie</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -96,9 +139,9 @@ export default function AnalysisProcessSection() {
             {jurisdictions.map((jur) => (
               <div
                 key={jur.code}
-                className="rounded-lg border-2 border-orange-200 bg-white p-4 dark:border-orange-800 dark:bg-slate-800"
+                className="rounded-xl border-2 border-violet-200 bg-white/80 p-4 backdrop-blur-sm transition-all hover:border-violet-400 hover:shadow-md dark:border-violet-800 dark:bg-slate-800/80"
               >
-                <h4 className="mb-2 font-semibold">{jur.name}</h4>
+                <h4 className="mb-2 font-semibold text-slate-900 dark:text-white">{jur.name}</h4>
                 <p className="text-sm text-slate-600 dark:text-slate-400">{jur.description}</p>
               </div>
             ))}
@@ -113,9 +156,9 @@ export default function AnalysisProcessSection() {
             {structures.map((struct) => (
               <div
                 key={struct.name}
-                className="rounded-lg border-2 border-orange-200 bg-white p-4 dark:border-orange-800 dark:bg-slate-800"
+                className="rounded-xl border-2 border-violet-200 bg-white/80 p-4 backdrop-blur-sm transition-all hover:border-violet-400 hover:shadow-md dark:border-violet-800 dark:bg-slate-800/80"
               >
-                <h4 className="mb-2 font-semibold">{struct.name}</h4>
+                <h4 className="mb-2 font-semibold text-slate-900 dark:text-white">{struct.name}</h4>
                 <p className="text-sm text-slate-600 dark:text-slate-400">{struct.description}</p>
               </div>
             ))}
@@ -127,16 +170,16 @@ export default function AnalysisProcessSection() {
             Analyse des risques et conformité
           </h3>
           <div className="grid gap-4 md:grid-cols-3">
-            <div className="rounded-lg bg-white p-4 dark:bg-slate-800">
-              <h4 className="mb-2 font-semibold text-red-600 dark:text-red-400">KYC</h4>
-              <p className="text-sm">Vérification de l'identité et du profil du propriétaire</p>
+            <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-4 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
+              <h4 className="mb-2 font-semibold text-violet-600 dark:text-violet-400">KYC</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Vérification de l'identité et du profil du propriétaire</p>
             </div>
-            <div className="rounded-lg bg-white p-4 dark:bg-slate-800">
-              <h4 className="mb-2 font-semibold text-red-600 dark:text-red-400">AML</h4>
-              <p className="text-sm">Détection du blanchiment d'argent et financement du terrorisme</p>
+            <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-4 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
+              <h4 className="mb-2 font-semibold text-violet-600 dark:text-violet-400">AML</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Détection du blanchiment d'argent et financement du terrorisme</p>
             </div>
-            <div className="rounded-lg bg-white p-4 dark:bg-slate-800">
-              <h4 className="mb-2 font-semibold text-red-600 dark:text-red-400">Sanctions</h4>
+            <div className="rounded-xl border-2 border-violet-200 bg-white/80 p-4 backdrop-blur-sm dark:border-violet-800 dark:bg-slate-800/80">
+              <h4 className="mb-2 font-semibold text-violet-600 dark:text-violet-400">Sanctions</h4>
               <p className="text-sm">Vérification des listes de sanctions internationales</p>
             </div>
           </div>

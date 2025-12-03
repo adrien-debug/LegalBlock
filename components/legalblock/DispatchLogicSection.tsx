@@ -1,3 +1,5 @@
+import { PaperAirplaneIcon } from "@/components/icons/SectionIcons";
+
 export default function DispatchLogicSection() {
   const recipients = [
     { name: "RAK ICC Registry", jurisdiction: "RAK ICC", type: "Autorité" },
@@ -16,10 +18,18 @@ export default function DispatchLogicSection() {
   ];
 
   return (
-    <section className="rounded-2xl bg-gradient-to-br from-rose-50 to-pink-50 p-8 shadow-lg dark:from-rose-900/20 dark:to-pink-900/20">
-      <h2 className="mb-6 text-3xl font-bold text-slate-900 dark:text-white">
-        📤 Section 8 : Logique de dispatch
-      </h2>
+    <section className="rounded-3xl border border-violet-200/50 bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-10 shadow-2xl dark:border-violet-800/50 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+      <div className="mb-8 flex items-center space-x-4">
+        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
+          <PaperAirplaneIcon className="h-7 w-7 text-white" />
+        </div>
+        <div>
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 bg-clip-text text-transparent">
+            Section 8 : Logique de dispatch
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400">Envoi automatique aux autorités</p>
+        </div>
+      </div>
 
       <div className="space-y-8">
         <div>

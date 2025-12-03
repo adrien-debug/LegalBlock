@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { 
-  CheckIcon
+  CheckIcon,
+  DocumentIcon
 } from "@/components/icons/GeneralIcons";
 
 interface Opportunity {
@@ -232,16 +233,16 @@ export default function AdvisorCockpit() {
         </button>
         <button
           onClick={() => setActiveTab("documents")}
-          disabled={!analysis}
           className={`px-6 py-3 font-semibold transition-colors ${
             activeTab === "documents"
               ? "border-b-2 border-violet-600 text-violet-600 dark:text-violet-400"
-              : analysis
-              ? "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
-              : "cursor-not-allowed text-slate-400 dark:text-slate-600"
+              : "text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
           }`}
         >
-          📄 Documents
+          <span className="flex items-center space-x-2">
+            <DocumentIcon className="h-5 w-5" />
+            <span>Documents</span>
+          </span>
         </button>
       </div>
 
@@ -533,49 +534,110 @@ export default function AdvisorCockpit() {
           </div>
         )}
 
-        {activeTab === "documents" && analysis && (
+        {activeTab === "documents" && (
           <div className="space-y-4">
             <h2 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
               Documents Générés
             </h2>
-            {analysis.documents.map((doc, idx) => (
-              <div
-                key={idx}
-                className="flex items-center justify-between rounded-xl border-2 border-slate-200 bg-white/80 p-4 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/80"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600">
-                    <span className="text-xl">📄</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-slate-900 dark:text-white">{doc.name}</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Type: {doc.type}</p>
-                  </div>
+            {analysis ? (
+              <>
+                <div className="mb-6 rounded-xl bg-gradient-to-r from-violet-50 to-purple-50 p-4 dark:from-violet-900/20 dark:to-purple-900/20">
+                  <p className="text-sm font-semibold text-violet-700 dark:text-violet-300">
+                    📋 Documents pour l'opportunité analysée
+                  </p>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <span
-                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                      doc.status === "generated"
-                        ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300"
-                        : doc.status === "pending"
-                        ? "bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300"
-                        : "bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300"
-                    }`}
+                {analysis.documents.map((doc, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center justify-between rounded-xl border-2 border-slate-200 bg-white/80 p-4 backdrop-blur-sm dark:border-slate-700 dark:bg-slate-800/80"
                   >
-                    {doc.status === "generated"
-                      ? "Généré"
-                      : doc.status === "pending"
-                      ? "En attente"
-                      : "Requis"}
-                  </span>
-                  {doc.status === "generated" && (
-                    <button className="rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:from-blue-700 hover:to-cyan-700">
-                      Télécharger
-                    </button>
-                  )}
+                    <div className="flex items-center space-x-3">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600">
+                        <DocumentIcon className="h-5 w-5 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900 dark:text-white">{doc.name}</h4>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">Type: {doc.type}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <span
+                        className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                          doc.status === "generated"
+                            ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300"
+                            : doc.status === "pending"
+                            ? "bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300"
+                            : "bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300"
+                        }`}
+                      >
+                        {doc.status === "generated"
+                          ? "Généré"
+                          : doc.status === "pending"
+                          ? "En attente"
+                          : "Requis"}
+                      </span>
+                      {doc.status === "generated" && (
+                        <button className="rounded-lg bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105 hover:shadow-lg">
+                          Télécharger
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <div className="space-y-6">
+                <div className="rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 p-12 text-center dark:border-slate-700 dark:bg-slate-800/50">
+                  <DocumentIcon className="mx-auto mb-4 h-16 w-16 text-slate-400 dark:text-slate-600" />
+                  <h3 className="mb-2 text-xl font-semibold text-slate-700 dark:text-slate-300">
+                    Aucun document généré
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400">
+                    Analysez une opportunité pour générer les documents juridiques
+                  </p>
+                  <button
+                    onClick={() => setActiveTab("opportunities")}
+                    className="mt-6 rounded-lg bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 px-6 py-3 font-semibold text-white transition-all hover:scale-105 hover:shadow-lg"
+                  >
+                    Voir les opportunités
+                  </button>
+                </div>
+
+                {/* Liste des documents disponibles */}
+                <div className="rounded-xl bg-gradient-to-br from-violet-50 via-purple-50 to-fuchsia-50 p-6 dark:from-violet-900/20 dark:via-purple-900/20 dark:to-fuchsia-900/20">
+                  <h3 className="mb-4 text-xl font-bold text-slate-900 dark:text-white">
+                    Types de documents disponibles
+                  </h3>
+                  <div className="grid gap-3 md:grid-cols-2">
+                    {[
+                      { name: "Operating Agreement", category: "SPV" },
+                      { name: "Articles of Association", category: "SPV" },
+                      { name: "Shareholders Agreement", category: "SPV" },
+                      { name: "Security Interest Agreement", category: "Garantie" },
+                      { name: "Pledge Agreement", category: "Garantie" },
+                      { name: "Fiducie-sûreté / Collateral Agreement", category: "Garantie" },
+                      { name: "Contrat de Prêt", category: "Financement" },
+                      { name: "Term Sheet", category: "Financement" },
+                      { name: "Résolutions SPV", category: "SPV" },
+                      { name: "NFT Master Token + metadata", category: "Tokenisation" },
+                      { name: "Fractionalisation ERC-20", category: "Tokenisation" },
+                      { name: "Fiches de dépôt et filings", category: "Administratif" },
+                    ].map((doc, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center space-x-3 rounded-lg border-2 border-violet-200 bg-white p-3 dark:border-violet-800 dark:bg-slate-800"
+                      >
+                        <DocumentIcon className="h-5 w-5 text-violet-600 dark:text-violet-400" />
+                        <div className="flex-1">
+                          <p className="text-sm font-semibold text-slate-900 dark:text-white">{doc.name}</p>
+                          <p className="text-xs text-slate-600 dark:text-slate-400">{doc.category}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            ))}
+            )}
           </div>
         )}
       </div>
