@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { HomeIcon, BankIcon, MenuIcon, XIcon, ArrowRightIcon, SparklesIcon2, ClockIcon, BellIcon, DocumentIcon } from "@/components/icons/GeneralIcons";
+import { HomeIcon, BankIcon, MenuIcon, XIcon, ArrowRightIcon, SparklesIcon2, ClockIcon, BellIcon, DocumentIcon, SocialMediaIcon } from "@/components/icons/GeneralIcons";
 import { BuildingIcon as BuildingIconSection, RocketIcon as RocketIconSection, RobotIcon as RobotIconSection, SearchIcon } from "@/components/icons/SectionIcons";
 
 const navItems = [
@@ -18,6 +18,7 @@ const toolsItems = [
   { href: "/legalblock/advisor", label: "AdvisorBlock", icon: RobotIconSection },
   { href: "/build-block", label: "Build Block", icon: RocketIconSection },
   { href: "/studies", label: "Studies & Docs", icon: DocumentIcon },
+  { href: "/social-media-admin", label: "Social Media Admin", icon: SocialMediaIcon },
 ];
 
 export default function Sidebar() {
