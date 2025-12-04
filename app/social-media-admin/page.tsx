@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
   ArrowLeftIcon, 
@@ -179,6 +179,30 @@ export default function SocialMediaAdminPage() {
   const [activeTab, setActiveTab] = useState<"dashboard" | "calendar" | "content" | "analytics" | "automation">("dashboard");
   const [selectedPlatform, setSelectedPlatform] = useState<"all" | "instagram" | "tiktok" | "twitter">("all");
   const [scheduledPosts, setScheduledPosts] = useState<ScheduledPost[]>(mockScheduledPosts);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Initialize posts from API on mount
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch('/api/social-media?action=posts');
+        if (response.ok) {
+          const data = await response.json();
+          if (data.posts && data.posts.length > 0) {
+            setScheduledPosts(data.posts);
+          }
+        }
+      } catch (err) {
+        // Silently fail and use mock data
+        console.error('Failed to load posts:', err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    loadPosts();
+  }, []);
   const [newPost, setNewPost] = useState({
     platform: "instagram" as "instagram" | "tiktok" | "twitter",
     content: "",
@@ -193,29 +217,77 @@ export default function SocialMediaAdminPage() {
     setNewPost({ ...newPost, content: randomHook });
   };
 
-  const addScheduledPost = () => {
+  const addScheduledPost = async () => {
     if (newPost.content && newPost.scheduledDate && newPost.scheduledTime) {
-      const post: ScheduledPost = {
-        id: Date.now().toString(),
-        platform: newPost.platform,
-        content: newPost.content,
-        scheduledDate: newPost.scheduledDate,
-        scheduledTime: newPost.scheduledTime,
-        status: "scheduled",
-      };
-      setScheduledPosts([...scheduledPosts, post]);
-      setNewPost({
-        platform: "instagram",
-        content: "",
-        scheduledDate: "",
-        scheduledTime: "",
-      });
-      setGeneratedHook("");
+      try {
+        setIsLoading(true);
+        setError(null);
+        const response = await fetch('/api/social-media', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newPost),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          setScheduledPosts([...scheduledPosts, data.post]);
+          setNewPost({
+            platform: "instagram",
+            content: "",
+            scheduledDate: "",
+            scheduledTime: "",
+          });
+          setGeneratedHook("");
+        } else {
+          throw new Error('Failed to create post');
+        }
+      } catch (err) {
+        setError('Failed to schedule post. Using local storage.');
+        // Fallback to local state
+        const post: ScheduledPost = {
+          id: Date.now().toString(),
+          platform: newPost.platform,
+          content: newPost.content,
+          scheduledDate: newPost.scheduledDate,
+          scheduledTime: newPost.scheduledTime,
+          status: "scheduled",
+        };
+        setScheduledPosts([...scheduledPosts, post]);
+        setNewPost({
+          platform: "instagram",
+          content: "",
+          scheduledDate: "",
+          scheduledTime: "",
+        });
+        setGeneratedHook("");
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
-  const deletePost = (id: string) => {
-    setScheduledPosts(scheduledPosts.filter((post) => post.id !== id));
+  const deletePost = async (id: string) => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      const response = await fetch(`/api/social-media?id=${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        setScheduledPosts(scheduledPosts.filter((post) => post.id !== id));
+      } else {
+        throw new Error('Failed to delete post');
+      }
+    } catch (err) {
+      setError('Failed to delete post. Using local storage.');
+      // Fallback to local state
+      setScheduledPosts(scheduledPosts.filter((post) => post.id !== id));
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const filteredPosts = selectedPlatform === "all" 
@@ -247,6 +319,16 @@ export default function SocialMediaAdminPage() {
             <span className="text-sm font-medium">Back to Home</span>
           </Link>
         </div>
+        {error && (
+          <div className="mb-4 rounded-xl border-2 border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-900/20">
+            <p className="text-sm font-semibold text-amber-700 dark:text-amber-300">{error}</p>
+          </div>
+        )}
+        {isLoading && (
+          <div className="mb-4 rounded-xl border-2 border-violet-200 bg-violet-50 p-4 dark:border-violet-800 dark:bg-violet-900/20">
+            <p className="text-sm font-semibold text-violet-700 dark:text-violet-300">Loading...</p>
+          </div>
+        )}
         <div className="mb-6 flex items-center space-x-3">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg">
             <SparklesIcon2 className="h-6 w-6 text-white" />
